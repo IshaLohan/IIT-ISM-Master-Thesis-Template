@@ -1,4 +1,5 @@
-\documentclass[12pt]{article}
+% \documentclass[12pt]{article}
+\documentclass[12pt]{report}
 \usepackage{graphicx} % Required for inserting images
 \usepackage{blindtext}
 \usepackage{titlesec}
@@ -16,6 +17,7 @@
 \usepackage{textcomp}
 \usepackage{float}
 \usepackage{natbib}
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
 \usepackage{afterpage}
 \usepackage{fancyhdr}
 
@@ -58,7 +60,7 @@
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=4cm]{ismlogo.jpg}
+    \includegraphics[width=4cm]{figs/ismlogo.jpg}
    
     \label{fig:enter-labe2l}
 \end{figure}
@@ -90,127 +92,31 @@ NOVEMBER 2023}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{ACKNOWLEDGEMENT}
-I extend my sincere gratitude to Prof.AA, a distinguished Professor in the Department of BB at IIT(ISM) Dhanbad. 
 
-MIND THAT YOU NEED SOME CERTIFICATES BEFORE THE ACKNOLEGMENT. REFER PG MANUAL ON THE IIT ISM SITE FOR CERTIFICATES. 
-THIS TEMPLATE IS AS PER THE REQUIREMENT OF THE YEAR 2023-2024 BATCH. PLEASE MAKE CHANGES FOR YOURSELF IF THINGS CHANGE LATER.
+\include{acknowledgement}
 
 
+\renewcommand*\contentsname{\centering Table of Contents}
+\tableofcontents
 \newpage
-\section*{CONTENTS}
-\begin{tabular}{ccc}
 
- Abstract  &  .........                  &  5 \\
-CHAPTER 1  & Introduction                &  6 \\
-CHAPTER 2  &  Data                       &  9 \\
-CHAPTER 3  & Method                      &  13 \\
-CHAPTER 4  & Your Chapter Title Goes Here   &  17 \\
-CHAPTER 5  &  Summary and Conclusions    &  21 \\
-References & .........                   & 31
-
-\end{tabular}
-
-\newpage
-\section*{}
-\listoftables
-
-
-\section*{}
+\renewcommand{\listfigurename}{\centering List of Figures}
 \listoffigures
-
+\addcontentsline{toc}{chapter}{Lists of Figures}
 \newpage
-\section*{Abstract}
-Could you write your ABSTRACT here?
 
+\renewcommand{\listtablename}{\centering List of Tables}
+\listoftables 
+\addcontentsline{toc}{chapter}{Lists of Tables}
 \newpage
-\section*{CHAPTER 1 \\Introduction}
-
-This is an introduction chapter. You should put citations like this \citep{Zhang2011}.
-
-If you need points in it- 
-
-\begin{enumerate}
-    \item Random Forest (RF)
-    \item  Gradient Boosting
-    \item Convolutional neural network (CNN)
-    \item Long Short-term Memory (LSTM)
-
-\end{enumerate}
 
 
-\newpage
-\section*{CHAPTER 2\\Data}
-The speed of light is approximately 299,792,458 meters per second, making it the fastest-known phenomenon in the universe. The speed of seismic waves is very low compared to light and that's why \textbf{earthquake comes} and \textbf{lightning strikes}.
-
-Getting figure here- 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{basemap.png}
-    \caption{ Do caption your maps properly}
-    \label{fig:well}
-\end{figure}
-
-
-\newpage
-\section*{CHAPTER 3\\ Method }
-
-Total internal reflection is a phenomenon in optics where light, when traveling from a denser medium to a less dense medium at an angle greater than the critical angle, reflects back into the denser medium rather than refracting out. 
-
-\subsection*{My subsection}
-
-This principle is the basis for optical fibers used in telecommunications.
-
-\newpage
-\section*{CHAPTER 4\\Your Chapter Title Goes Here }
-
-Distributed Acoustic Sensing (DAS) is a transformative technology in geosciences and engineering. DAS records ground motion along fiber-optic cables that are comparable to those obtained by single-component accelerometers or geophones. The transformative potential arises from the fiber itself being the sensor and allowing for a spatially continuous measurement. The fiber can be tens of kilometers in length and it can be located in shallowly buried trenches, in boreholes, or in some combination. The fiber geometry can encompass a large volume that can be tens of cubic kilometers in size. DAS inherently possesses properties of a large-N seismic array. The rapidly increasing interest in DAS arises from its potential to be used in continuous arrays that are kilometers in length while providing spatial resolution of meters and frequency response from millihertz to kilohertz.
-
-DAS applications in geosciences and engineering are numerous and growing including opportunities for deploying early warning systems for earthquakes, volcanic eruptions, continental and marine landslides, and avalanches, and for monitoring reservoirs and civil infrastructure. DAS can complement and supplement conventional seismic sensors and arrays already used across a wide range of disciplines.
-
-\subsection*{Statistical Analysis}
-
-YOUR EQUATIONS GOES GOOD
-
-The error between predicted and actual pore pressure has been calculated as \( R^2 \) coefficient. The Coefficient of Determination  \( R^2 \), indicates the goodness of fit of the regression line to the actual data points.
-
- \( R^2 \) ranges from 0 to 1, where:
- 
-
-1. Sum of Squares Total (SST):
-
-   \[ SST = \sum_{i=1}^{n} (y_i - \bar{y})^2 \]
-
-2. Sum of Squares Regression (SSR):
-
-   \[ SSR = \sum_{i=1}^{n} (\hat{y}_i - \bar{y})^2 \]
-
-\newpage
-\section*{CHAPTER 5\\Summary and Conclusions}
-
-I need to show my results as subplots here.
-
-\begin{figure}[H]
-    \centering
-    \subfigure[The first image]{
-        \includegraphics[width=0.5\linewidth]{my_pic.png} % Include your first plot
-        \label{fig:plot1}
-    }
-    \hfill
-    \subfigure[Second image ]{
-        \includegraphics[width=0.5\linewidth]{my_pic.png} % Include your second plot
-        \label{fig:plot2}
-    }
-    \caption{The figure with subplots}
-    \label{fig:two_plots}
-\end{figure}
-
-%  \input{table}  % if you need to put some tables
-
-\newpage
-\subsection*{Conclusions}
-As we wrap up this discussion, I hope this template helps you save your time doing formatting. Cheers!
+\include{abstract}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
 
 
 \newpage
